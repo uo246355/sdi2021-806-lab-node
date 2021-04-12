@@ -1,6 +1,11 @@
 //mongodb://atlas:sdi@tiendamusica-shard-00-00.qmudf.mongodb.net:27017,tiendamusica-shard-00-01.qmudf.mongodb.net:27017,tiendamusica-shard-00-02.qmudf.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-7fytht-shard-0&authSource=admin&retryWrites=true&w=majority
 
-
+// Módulos
+let express = require('express');
+let app = express();
+let fileUpload = require('express-fileupload');
+app.use(fileUpload());
+let mongo = require('mongodb');
 
 let mongo = require('mongodb');
 let swig = require('swig');

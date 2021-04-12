@@ -1,22 +1,21 @@
-{% extends "base.html" %} 
-
-{% block titulo %} Detalles de canción {% endblock %} 
-
+{% extends "base.html" %}
+{% block titulo %} Detalles {{ cancion.nombre }} {% endblock %}
 {% block contenido_principal %}
-	 <div class="row">
-		<div class="media col-xs-10">
-		  <div class="media-left media-middle">
-			<img class="media-object" src="../../../Downloads/PL-SDI-Material7/recursos/img/cancion1.png" >
-		  </div>
-		  <div class="media-body">
-			 <h2>Titulo de la canción Titulo de la canción</h2>
-			 <p>Autor</p>
-			 <p>Genero</p>
-			 <button type="button" class="btn btn-primary pull-right">1.40 €</button>
-			 <!-- Cambiar el precio por "reproducir" si ya está comprada -->
-		  </div>
+<div class="row">
+	<div class="media col-xs-10">
+		<div class="media-left media-middle">
+			<img class="media-object" src="/portadas/{{ cancion._id.toString() }}.png" >
 		</div>
-	  </div>
+		<div class="media-body">
+			<h2>{{ cancion.nombre }}</h2>
+			<p>{{ cancion.autor }}</p>
+			<p>{{ cancion.genero }}</p>
+			<button type="button" class="btn btn-primary pull-right">{{ cancion.precio }}
+				€</button>
+			<!-- Cambiar el precio por "reproducir" si ya está comprada -->
+		</div>
+	</div>
+</div>
 	  
 	 <!-- -->
 	 <div class="row" style="margin-top: 20px;" >
